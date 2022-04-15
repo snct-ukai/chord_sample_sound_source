@@ -4,6 +4,7 @@ import csv
 import os
 import numpy as np
 import soundfile as sf
+import pathlib
 
 filename : str = "./datalist.csv"
 base = os.path.dirname(os.path.abspath(__file__))
@@ -27,5 +28,6 @@ with open(file, "r") as f:
         data += 0.005*wn
         
         writepath = os.path.normpath(os.path.join(base, group[1] + "/" + basepath))
+        pathlib.Path(writepath).touch()
         print(writepath)
         sf.write(writepath, data, sr)
