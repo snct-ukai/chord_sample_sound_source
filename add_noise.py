@@ -27,4 +27,4 @@ with open(file, "r") as f:
         
         writepath = os.path.normpath(os.path.join(base, group[1] + "/" + basepath))
         print(writepath)
-        librosa.audio.sf.write(writepath, data, sr)
+        librosa.output.write_wav(writepath, data, sr)
