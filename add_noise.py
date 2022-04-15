@@ -3,6 +3,7 @@ import librosa
 import csv
 import os
 import numpy as np
+import soundfile as sf
 
 filename : str = "./datalist.csv"
 base = os.path.dirname(os.path.abspath(__file__))
@@ -27,4 +28,4 @@ with open(file, "r") as f:
         
         writepath = os.path.normpath(os.path.join(base, group[1] + "/" + basepath))
         print(writepath)
-        librosa.output.write_wav(writepath, data, sr)
+        sf.write(writepath, data, sr)
