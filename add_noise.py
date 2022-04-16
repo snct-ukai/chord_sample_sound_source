@@ -28,6 +28,4 @@ with open(file, "r") as f:
         data += 0.005*wn
         
         writepath = os.path.normpath(os.path.join(base, group[1] + "/" + basepath))
-        pathlib.Path(writepath).touch()
-        print(writepath)
         sf.write(writepath, data, sr)
